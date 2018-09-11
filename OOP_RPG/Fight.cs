@@ -43,16 +43,6 @@ namespace OOP_RPG
             var randomEnemy = this.Monsters.OrderBy(p => Guid.NewGuid()).FirstOrDefault();
             Console.WriteLine(randomEnemy);
             Console.ReadLine();
-
-
-
-
-
-
-
-
-
-
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" + 
             monster.CurrentHP + " HP. What will you do?");
             Console.WriteLine("1. Fight");
