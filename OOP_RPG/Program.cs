@@ -9,6 +9,7 @@ namespace OOP_RPG
             // game is also a variable that is pointing to the instance of that Class
             var game = new Game();
             game.Start();
+            
         }
     }
 }

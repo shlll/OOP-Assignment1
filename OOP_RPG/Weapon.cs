@@ -1,22 +1,18 @@
 using System;
 namespace OOP_RPG
 {
-    public class Weapon
+    public class Weapon : Item
     {
-        public Weapon(string name, int strength = 10) {
-            if(name != "" && name != null)
-            {
+        public Weapon(string name, int strength , int originalValue, int resellValue) {
+            
             this.Name = name;
             this.Strength = strength;
-            }
+            this.OriginalValue = originalValue;
+            this.ResellValue = resellValue;
             
         }
-        public Weapon(string name)
-        {
-            this.Name = name;
-            this.Strength = 10;
-        }
-        
+        public int OriginalValue { get; set; }
+        public int ResellValue { get; set; }
         public string Name { get; set; }
         public int Strength { get; set; }
     }

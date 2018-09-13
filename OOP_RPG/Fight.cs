@@ -43,16 +43,6 @@ namespace OOP_RPG
             var randomEnemy = this.Monsters.OrderBy(p => Guid.NewGuid()).FirstOrDefault();
             Console.WriteLine(randomEnemy);
             Console.ReadLine();
-
-
-
-
-
-
-
-
-
-
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" + 
             monster.CurrentHP + " HP. What will you do?");
             Console.WriteLine("1. Fight");
@@ -115,8 +105,13 @@ namespace OOP_RPG
         public void Win() {
             var enemy = monster;
             Console.WriteLine(enemy.Name + " has been defeated! You win the battle!");
+            hero.Gold = hero.Gold + enemy.Gold;
+            Console.WriteLine(hero.Name + " has got " + hero.Gold + " , U won the game!");
             game.Main();
+            Console.ReadLine();
+            
         }
+
         
         public void Lose() {
             Console.WriteLine("You've been defeated! :( GAME OVER.");
