@@ -9,11 +9,11 @@ namespace OOP_RPG
                 hero.Strength = 55;
                 
                 Console.WriteLine("Hero's strength: " + hero.Strength);
-                
-                var weapon = new Weapon("Sword", 5);
+
+                var weapon = new Weapon("Sword", 5, 2, 5);
                 Console.WriteLine("Weapon is a " + weapon.Name + " of strength " + weapon.Strength);
                 hero.WeaponsBag.Add(weapon);
-                var weapon2 = new Weapon("Axe", 10);
+                var weapon2 = new Weapon("Axe", 10, 20, 50);
                 hero.WeaponsBag.Add(weapon2);
                 
                 foreach (var item in hero.WeaponsBag) {

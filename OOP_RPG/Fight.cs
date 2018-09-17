@@ -16,11 +16,12 @@ namespace OOP_RPG
             this.Monsters = new List<Monster>();
             this.hero = hero;
             this.game = game;
-            this.AddMonster("Squid", 9, 8, 20);
-            this.AddMonster("Clever", 10, 20, 30);
-            this.AddMonster("interesting", 15, 25, 35);
-            this.AddMonster("amazing", 5, 8, 9);
-            this.AddMonster("unbelievable", 2, 5, 8);
+
+            this.AddMonster("Squid", 9, 8, 20,8,18);
+            this.AddMonster("Clever", 10, 20, 30,9,17);
+            this.AddMonster("interesting", 15, 25, 35,10,21);
+            this.AddMonster("amazing", 5, 8, 9,15,23);
+            this.AddMonster("unbelievable", 2, 5, 8,20,18);
             this.monster = this.Monsters[0];
             this.monster = this.Monsters[4];
             this.monster = this.Monsters[1];
@@ -29,7 +30,7 @@ namespace OOP_RPG
             this.monster = this.Monsters.OrderBy(p => Guid.NewGuid()).FirstOrDefault();
         }
         
-        public void AddMonster(string name, int strength, int defense, int hp) {
+        public void AddMonster(string name, int strength, int defense, int hp, int gold, int speed) {
             var monster = new Monster(name,strength,defense,hp);
             this.Monsters.Add(monster);
         }

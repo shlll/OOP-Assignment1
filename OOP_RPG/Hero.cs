@@ -16,9 +16,11 @@ namespace OOP_RPG
         public Hero() {
             this.ArmorsBag = new List<Armor>();
             this.WeaponsBag = new List<Weapon>();
+            this.PotionsBag = new List<Potion>();
             this.Strength = 10;
             this.Defense = 10;
             this.Gold = 0;
+            this.Speed = 20;
             this.OriginalHP = 30;
             this.CurrentHP = 30;
         }
@@ -30,11 +32,14 @@ namespace OOP_RPG
         public int OriginalHP { get; set; }
         public int CurrentHP { get; set; }
         public int Gold { get; set; }
+        public int Speed { get; set; }
         public Weapon EquippedWeapon { get; set; }
         public Armor EquippedArmor { get; set; }
+        public Potion EquippedPotion { get; set; }
         
         public List<Armor> ArmorsBag { get; set;}
         public List <Weapon> WeaponsBag { get; set; }
+        public List <Potion> PotionsBag { get; set; }
         
         //These are the Methods of our Class.
         public void ShowStats() {
@@ -42,6 +47,9 @@ namespace OOP_RPG
             Console.WriteLine("Strength: " + this.Strength);
             Console.WriteLine("Defense: " + this.Defense);
             Console.WriteLine("Hitpoints: " + this.CurrentHP + "/" + this.OriginalHP);
+            Console.WriteLine("Speed: " + this.Speed);
+            Console.WriteLine("Gold: " + this.Gold);
+            Console.WriteLine();
         }
         
         public void ShowInventory() {
@@ -54,6 +62,13 @@ namespace OOP_RPG
             foreach(var a in this.ArmorsBag){
                 Console.WriteLine(a.Name + " of " + a.Defense + " Defense");
             }
+            Console.WriteLine("Potion: ");
+            foreach(var p in this.PotionsBag)
+            {
+                Console.WriteLine(p.Name + " of " + p.HP + "Hp") ;
+            }
+           
+
         }
         
         public void EquipWeapon() {
@@ -67,6 +82,12 @@ namespace OOP_RPG
                 this.EquippedArmor = this.ArmorsBag[0];
             }
         }
-        
+        public void HealingPotion()
+        {
+            if (PotionsBag.Any())
+            {
+                this.EquippedPotion = this.PotionsBag[0];
+            }
+        }
     }
 }
