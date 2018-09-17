@@ -262,8 +262,7 @@ namespace OOP_RPG
                     this.Menu();
                 }
             }
-            foreach (var bag5 in Game.hero.ArmorsBag
-                )
+            foreach (var bag5 in Game.hero.ArmorsBag)
             {
                 Game.hero.ArmorsBag.Remove(bag5);
 
